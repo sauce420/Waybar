@@ -57,7 +57,7 @@ auto waybar::modules::IdleInhibitor::update() -> void {
     }
   }
 
-  std::string status_text = status ? "activated" : "deactivated";
+  std::string status_text = status ? "inhibiting idle" : "not inhibiting idle";
   label_.set_markup(fmt::format(format_, fmt::arg("status", status_text),
                                 fmt::arg("icon", getIcon(0, status_text))));
   label_.get_style_context()->add_class(status_text);
